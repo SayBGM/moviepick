@@ -1,0 +1,19 @@
+{
+  "name": "moviepick",
+  "version": "1.0.0",
+  "description": "React 기반 영화 정보 제공 웹 사이트 프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SayBGM/moviepick.git"
+  },
+  "author": "Saybgm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SayBGM/moviepick/issues"
+  },
+  "homepage": "https://github.com/SayBGM/moviepick#readme"
+}
