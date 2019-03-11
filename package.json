@@ -15,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/SayBGM/moviepick/issues"
   },
-  "homepage": "https://github.com/SayBGM/moviepick#readme"
+  "homepage": "https://github.com/SayBGM/moviepick#readme",
+  "devDependencies": {
+    "parcel": "^1.12.0",
+    "sass": "^1.17.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.8.4",
+    "react-d3-components": "^0.9.1",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "rxjs": "^6.4.0"
+  }
 }
