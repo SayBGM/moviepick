@@ -4,6 +4,7 @@
   "description": "React 기반 영화 정보 제공 웹 사이트 프로젝트",
   "main": "index.js",
   "scripts": {
+    "start": "parcel index.html -p 3000",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/SayBGM/moviepick#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-plugin-module-resolver": "^3.2.0",
     "parcel": "^1.12.0",
     "sass": "^1.17.2"
   },
