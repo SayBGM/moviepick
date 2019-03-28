@@ -12,7 +12,8 @@
           "@": "./src",
           "components": "./src/components",
           "container": "./src/container",
-          "requests": "./src/core/requests"
+          "requests": "./src/core/requests",
+          "assets": "./src/assets"
         }
       }
     ]

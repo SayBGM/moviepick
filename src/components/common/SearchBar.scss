@@ -1,0 +1,43 @@
+.Navi__wrapper__search {
+    position: absolute;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;
+    &--focus {
+        border-color: #c373f7;
+        width: 275px;
+    }
+    &__icon {
+        position: absolute;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        transition: 0.5s;
+        &--focus {
+            fill: #c373f7;
+        }
+    }
+    &__input {
+        position: absolute;
+        left: 10px;
+        width: 220px;
+        font-size: 20px;
+        border: 0;
+        opacity: 1;
+        transition: 0.75s;
+        outline: none;
+        color: #c373f7;
+        &--close {
+            width: 1px;
+            right: 55px;
+            opacity: 0;
+        }
+    }
+}
