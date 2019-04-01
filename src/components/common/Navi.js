@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 import './Navi.scss'
 
 const Navi = () => (
-  <div className="Navi" style={{width:window.screen.width}}>
+  <div className="Navi">
     <div className="Navi__wrapper">
       <div className="Navi__wrapper__img">
         <Logo width="150px"/>

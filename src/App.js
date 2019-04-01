@@ -7,6 +7,9 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import Navi from './components/common/Navi';
 import MainContents from './components/common/MainContents';
+import MoviePoster from './components/common/MoviePoster';
+
+import './App.scss';
 
 const store = createStore(
   combineReducers({
@@ -21,9 +24,16 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <div className="">
+          <div className="Root">
             <Navi />
-            <MainContents />
+            <MainContents>
+                <Switch>
+                  <Route
+                    path="/"
+                    component={Test}
+                  />
+                </Switch>
+            </MainContents>
             <Switch>
               
             </Switch>
@@ -35,3 +45,32 @@ class App extends Component {
 }
  
 export default App;
+
+const Test = () => (
+  <React.Fragment>
+    <MoviePoster
+      type="main"
+      imgSrc={require('./assets/testPoster.jpg')}
+    />
+    <MoviePoster
+    type="main"
+    imgSrc={require('./assets/testPoster.jpg')}
+  />
+  <MoviePoster
+    type="main"
+    imgSrc={require('./assets/testPoster.jpg')}
+  />
+  <MoviePoster
+    type="main"
+    imgSrc={require('./assets/testPoster.jpg')}
+  />
+  <MoviePoster
+    type="main"
+    imgSrc={require('./assets/testPoster.jpg')}
+  />
+  <MoviePoster
+    type="main"
+    imgSrc={require('./assets/testPoster.jpg')}
+  />
+  </React.Fragment>
+)

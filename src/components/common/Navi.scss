@@ -4,9 +4,10 @@
     height: 80px;
     background-color: #FFF;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    z-index: 1;
     &__wrapper {
         position: relative;
-        width: 1366px;
+        width: 1300px;
         height: 100%;
         display: flex;
         align-items: center;
