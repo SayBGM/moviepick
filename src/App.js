@@ -6,8 +6,7 @@ import { Router, Route, browserHistory, Switch } from 'react-router-dom';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import Navi from './components/common/Navi';
-import MainContents from './components/common/MainContents';
-import MoviePoster from './components/common/MoviePoster';
+import Main from './container/Main';
 
 import './App.scss';
 
@@ -26,16 +25,8 @@ class App extends Component {
         <Router history={history}>
           <div className="Root">
             <Navi />
-            <MainContents>
-                <Switch>
-                  <Route
-                    path="/"
-                    component={Test}
-                  />
-                </Switch>
-            </MainContents>
             <Switch>
-              
+              <Route path="/" component={Main}/>
             </Switch>
           </div>
         </Router>
@@ -45,32 +36,3 @@ class App extends Component {
 }
  
 export default App;
-
-const Test = () => (
-  <React.Fragment>
-    <MoviePoster
-      type="main"
-      imgSrc={require('./assets/testPoster.jpg')}
-    />
-    <MoviePoster
-    type="main"
-    imgSrc={require('./assets/testPoster.jpg')}
-  />
-  <MoviePoster
-    type="main"
-    imgSrc={require('./assets/testPoster.jpg')}
-  />
-  <MoviePoster
-    type="main"
-    imgSrc={require('./assets/testPoster.jpg')}
-  />
-  <MoviePoster
-    type="main"
-    imgSrc={require('./assets/testPoster.jpg')}
-  />
-  <MoviePoster
-    type="main"
-    imgSrc={require('./assets/testPoster.jpg')}
-  />
-  </React.Fragment>
-)
