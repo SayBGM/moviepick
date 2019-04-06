@@ -1,12 +1,12 @@
 import React from 'react';
-import MainContents from '../../components/Main/MainContents';
+import MainTitle from '../../components/Main/MainTitle';
 import MoviePosterList from '../../components/Main/MoviePosterList';
 
 const Main = () => (
   <React.Fragment>
-    <MainContents>
+    <MainTitle>
       <MoviePosterList />
-    </MainContents>
+    </MainTitle>
   </React.Fragment>
 )
 

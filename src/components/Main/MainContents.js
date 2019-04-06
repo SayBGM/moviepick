@@ -1,14 +1,21 @@
-import React from 'react';
-import './MainContents.scss';
+import React, { Component } from 'react';
 
-const MainContents = ({ children }) => {
+class MainContents extends Component {
+  render() {
+  const { selectData } = this.props;
+  if (selectData === null) {
+    return (
+      <div className="MainContents">
+        
+      </div>
+    );
+  }
   return (
     <div className="MainContents">
-      <div className="MainContents__wrapper">
-        {children}
-      </div>
+      
     </div>
-  )
+  );
+  }
 }
-
+ 
 export default MainContents;
