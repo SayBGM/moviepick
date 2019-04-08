@@ -24,6 +24,11 @@ export const SUCCESS_GET_MOVIE = 'SUCCESS_GET_MOVIE'
  */
 export const FAIL_GET_MOVIE = 'FAIL_GET_MOVIE'
 
+/**
+ * 영화 정보 세팅
+ */
+export const SET_MOVIE = 'SET_MOVIE'
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // 영화 비교
 /**
