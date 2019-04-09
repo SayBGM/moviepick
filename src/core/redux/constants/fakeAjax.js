@@ -51,6 +51,6 @@ export const fakeAjax = () => {
           audience: 353274,
         },
       ])
-    }, 1000)
+    }, 5000)
   })
 }

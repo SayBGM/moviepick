@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Lottie from 'react-lottie';
+
 import MoviePoster from '../common/MoviePoster';
 import {getMovieList} from '../../core/redux/actions/MovieInfoAction';
+import {LodingAnimation} from '../../assets/index';
+
+import './MoviePosterList.scss';
 
 /**
  * MoviePosterList
@@ -15,11 +20,28 @@ class MoviePosterList extends Component {
 
   renderList () {
     const { movieList, loading, status } = this.props;
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: LodingAnimation,
+    };
     console.log(movieList)
-    if (status === null || !status) {
-      return <div></div>
-    } 
-    else if (loading) {
+    if (loading) {
+      return (
+        <div className="MoviePosterList__LodingInfo">
+          <Lottie 
+            options={defaultOptions}
+            height={400}
+            isClickToPauseDisabled={true}
+          />
+          <div className="MoviePosterList__LodingInfo__msg">
+            <span>서버에서 영화 데이터를 불러오는 중입니다!</span><br />
+            잠시만 기다려주세요 {':)'}
+          </div>
+        </div>
+      )
+    }
+    else if (status === null || !status) {
       return <div></div>
     }
     return movieList.map((movie) => (
