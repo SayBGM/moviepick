@@ -4,7 +4,7 @@ import Lottie from 'react-lottie';
 
 import MoviePoster from '../common/MoviePoster';
 import {getMovieList} from '../../core/redux/actions/MovieInfoAction';
-import {LodingAnimation} from '../../assets/index';
+import {LodingAnimation, FailAnimation} from '../../assets/index';
 
 import './MoviePosterList.scss';
 
@@ -20,13 +20,13 @@ class MoviePosterList extends Component {
 
   renderList () {
     const { movieList, loading, status } = this.props;
+    console.log(movieList)
     const defaultOptions = {
       loop: true,
       autoplay: true, 
-      animationData: LodingAnimation,
     };
-    console.log(movieList)
     if (loading) {
+      defaultOptions.animationData = LodingAnimation
       return (
         <div className="MoviePosterList__LodingInfo">
           <Lottie 
@@ -41,8 +41,23 @@ class MoviePosterList extends Component {
         </div>
       )
     }
-    else if (status === null || !status) {
-      return <div></div>
+    else if (status !== true) {
+      defaultOptions.animationData = FailAnimation;
+      defaultOptions.speed = 0.5;
+      defaultOptions.loop = false;
+      return (
+        <div className="MoviePosterList__LodingInfo MoviePosterList__LodingInfo--fail">
+          <Lottie 
+            options={defaultOptions}
+            height={200}
+            isClickToPauseDisabled={true}
+          />
+          <div className="MoviePosterList__LodingInfo__msg MoviePosterList__LodingInfo__msg--fail">
+            <span>서버에서 영화 정보를 불러오지 못했습니다</span><br />
+            새로고침 혹은 인터넷 연결을 확인해주세요 {':('}
+          </div>
+        </div>
+      )
     }
     return movieList.map((movie) => (
       <MoviePoster

@@ -11,16 +11,23 @@
         text-align: center;
         border-radius: 30px;
         &__msg {
+            width: 100%;
             font-size: 20px;
-            position: relative;
-            top: -75px;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
             & span {
                 font-weight: 900;
             }
         }
-        & svg {
+        & div:first-child {
             position: relative;
             top: -50px;
+        }
+        &--fail {
+            & div:first-child {
+                top: 75px;
+            }
         }
     }
 }
