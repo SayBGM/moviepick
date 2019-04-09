@@ -10,7 +10,6 @@ import Main from './container/Main';
 
 import './App.scss';
 
-
 const history = createBrowserHistory()
 
 class App extends Component {
