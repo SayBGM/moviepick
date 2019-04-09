@@ -1,6 +1,6 @@
-import { merge } from 'rxjs';
+import { combineEpics } from 'redux-observable';
 import MovieInfoEpic from './MovieInfoEpic';
 
-export default (action$, store) => merge(
+export default combineEpics(
   MovieInfoEpic,
 );

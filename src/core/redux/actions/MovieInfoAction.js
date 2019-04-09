@@ -3,45 +3,45 @@ import * as types from './types';
 /**
  * 영화 정보 가져오기
  */
-export const getMovie = () => {
+export const getMovieList = () => {
   return {
-    type: types.GET_MOVIE,
+    type: types.GET_MOVIE_LIST,
   };
 }
 
 /**
  * 영화 정보 ajax 통신 시작
  */
-export const lodingGetMovie = () => {
+export const lodingGetMovieList = () => {
   return {
-    type: types.LODING_GET_MOVIE,
+    type: types.LODING_GET_MOVIE_LIST,
   }
 }
 
 /**
  * 영화 정보 ajax 통신 종료
  */
-export const endGetMovie = () => {
+export const endGetMovieList = () => {
   return {
-    type: types.END_GET_MOVIE,
+    type: types.END_GET_MOVIE_LIST,
   };
 }
 
 /**
  * 영화 정보 통신 성공
  */
-export const successGetMovie = () => {
+export const successGetMovieList = () => {
   return {
-    type: types.SUCCESS_GET_MOVIE,
+    type: types.SUCCESS_GET_MOVIE_LIST,
   };
 }
 
 /**
  * 영화 정보 통신 실패
  */
-export const failGetMovie = (err) => {
+export const failGetMovieList = (err) => {
   return {
-    type: types.FAIL_GET_MOVIE,
+    type: types.FAIL_GET_MOVIE_LIST,
     err,
   };
 }
@@ -49,9 +49,9 @@ export const failGetMovie = (err) => {
 /**
  * 영화 정보 세팅
  */
-export const setMovie = (movieList) => {
+export const setMovieList = (movieList) => {
   return {
-    type: types.SET_MOVIE,
+    type: types.SET_MOVIE_LIST,
     movieList,
   }
 }

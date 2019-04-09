@@ -2,32 +2,32 @@
 /**
  * 영화 정보 가져오기
  */
-export const GET_MOVIE = 'GET_MOVIE';
+export const GET_MOVIE_LIST = 'GET_MOVIE_LIST';
 
 /**
  * 영화 정보 ajax 통신 시작
  */
-export const LODING_GET_MOVIE = 'LODING_GET_MOVIE'
+export const LODING_GET_MOVIE_LIST = 'LODING_GET_MOVIE_LIST'
 
 /**
  * 영화 정보 ajax 통신 종료
  */
-export const END_GET_MOVIE = 'END_GET_MOVIE'
+export const END_GET_MOVIE_LIST = 'END_GET_MOVIE_LIST'
 
 /**
  * 영화 정보 통신 성공
  */
-export const SUCCESS_GET_MOVIE = 'SUCCESS_GET_MOVIE'
+export const SUCCESS_GET_MOVIE_LIST = 'SUCCESS_GET_MOVIE_LIST'
 
 /**
  * 영화 정보 통신 실패
  */
-export const FAIL_GET_MOVIE = 'FAIL_GET_MOVIE'
+export const FAIL_GET_MOVIE_LIST = 'FAIL_GET_MOVIE_LIST'
 
 /**
  * 영화 정보 세팅
  */
-export const SET_MOVIE = 'SET_MOVIE'
+export const SET_MOVIE_LIST = 'SET_MOVIE_LIST'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // 영화 비교

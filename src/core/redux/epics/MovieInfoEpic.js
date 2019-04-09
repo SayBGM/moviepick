@@ -6,17 +6,17 @@ import * as types from './../actions/types';
 import * as Action from './../actions/MovieInfoAction';
 import { fakeAjax } from './../constants/fakeAjax'
 
-const MovieInfoEpic = (action$, store) => {
+export default function MovieInfoEpic (action$, store) {
   return action$.pipe(
-    ofType(types.GET_MOVIE),
-    switchMap(action => from(fakeAjax()))
-    .pipe(mergeMap(
-      movieData => Action.setMovie(movieData),
-      startWith(Action.lodingGetMovie()),
-      catchError(err => Action.failGetMovie(err)),
-      concat([Action.endGetMovie()])
-    ))
+    ofType(types.GET_MOVIE_LIST),
+    switchMap(action => from(fakeAjax())
+      .pipe(
+        mergeMap(
+          data => [Action.setMovieList(data), Action.successGetMovieList()]),
+        startWith(Action.lodingGetMovieList()),
+        catchError(err => [Action.failGetMovieList(err)]),
+        concat([Action.endGetMovieList()])
+      )
+    )
   )
 }
-
-export default MovieInfoEpic;
