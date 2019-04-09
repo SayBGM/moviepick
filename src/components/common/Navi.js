@@ -3,8 +3,6 @@ import { Logo } from '../../assets';
 import SearchBar from './SearchBar';
 
 import './Navi.scss'
-import { getMovieList } from '../../core/redux/actions/MovieInfoAction';
-import {connect} from 'react-redux';
 
 class Navi extends Component {
   render() { 
@@ -12,7 +10,7 @@ class Navi extends Component {
     return (
       <div className="Navi">
         <div className="Navi__wrapper">
-          <div className="Navi__wrapper__img" onClick={() => getMovieList()}>
+          <div className="Navi__wrapper__img">
             <Logo width="150px"/>
           </div>
           <SearchBar />
@@ -22,10 +20,5 @@ class Navi extends Component {
   }
 }
 
-const mapDispathToProps = (dispatch) => {
-  return {
-    getMovieList: () => dispatch(getMovieList())
-  }
-}
 
-export default connect(null, mapDispathToProps)(Navi);
+export default Navi;

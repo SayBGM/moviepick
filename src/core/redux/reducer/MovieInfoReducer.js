@@ -10,20 +10,30 @@ const MovieInfoReducer = (state = initialState, action) => {
   const temp = state;
   switch (action.type) {
     case types.SET_MOVIE_LIST:
-      temp.movieList = action.movieList;
-      return temp;
+      return {
+        ...state,
+        movieList: action.movieList
+      };
     case types.LODING_GET_MOVIE_LIST:
-      temp.loading = true;
-      return temp;
+      return {
+        ...state,
+        loading: true
+      }
     case types.END_GET_MOVIE_LIST:
-      temp.loading = false;
-      return temp;
+      return {
+        ...state,
+        loading: false
+      }
     case types.SUCCESS_GET_MOVIE_LIST:
-      temp.status = null;
-      return temp;
+      return {
+        ...state,
+        status: true
+      }
     case types.FAIL_GET_MOVIE_LIST:
-      temp.status = action.err
-      return temp;
+      return {
+        ...state,
+        status: action.err
+      }
     default:
       return state;
   }

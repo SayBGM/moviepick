@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MoviePoster from '../common/MoviePoster';
+import {getMovieList} from '../../core/redux/actions/MovieInfoAction';
 
 /**
  * MoviePosterList
@@ -7,64 +9,20 @@ import MoviePoster from '../common/MoviePoster';
  * MoivePoster를 가로 리스트 형식으로 출력해주는 컴포넌트로써 버튼을 누르면 3개씩 스크롤을 이동시킴
  */
 class MoviePosterList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posterData: [
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 1,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 2,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 3,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 4,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 5,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-        {
-          imgSrc: require('../../assets/testPoster.jpg'),
-          ranking: 6,
-          name: '어벤져스: 엔드게임',
-          manyScreen: 697,
-          screening: 3223,
-          audience: 353274,
-        },
-      ]
-    }
+  componentDidMount() {
+    this.props.getMovieList();
   }
 
   renderList () {
-    return this.state.posterData.map((movie) => (
+    const { movieList, loading, status } = this.props;
+    console.log(movieList)
+    if (status === null || !status) {
+      return <div></div>
+    } 
+    else if (loading) {
+      return <div></div>
+    }
+    return movieList.map((movie) => (
       <MoviePoster
         type="main"
         info={movie}
@@ -88,4 +46,18 @@ class MoviePosterList extends Component {
   }
 }
  
-export default MoviePosterList;
+const mapStateToProps = (state) => {
+  return {
+    movieList: state.MovieInfoReducer.movieList,
+    loading: state.MovieInfoReducer.loading,
+    status: state.MovieInfoReducer.status
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getMovieList: () => dispatch(getMovieList())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoviePosterList);
