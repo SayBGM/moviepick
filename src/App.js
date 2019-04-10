@@ -9,6 +9,7 @@ import Navi from './components/common/Navi';
 import Main from './container/Main';
 
 import './App.scss';
+import MovieCompareMenu from './components/common/MovieCompareMenu';
 
 const history = createBrowserHistory()
 
@@ -22,6 +23,7 @@ class App extends Component {
             <Switch>
               <Route path="/" component={Main}/>
             </Switch>
+            <MovieCompareMenu />
           </div>
         </Router>
       </Provider>
