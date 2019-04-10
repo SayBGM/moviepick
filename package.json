@@ -30,6 +30,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "fontfaceobserver": "^2.1.0",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-d3-components": "^0.9.1",

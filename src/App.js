@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { Router, Route, browserHistory, Switch } from 'react-router-dom';
+import FontFaceObserver from 'fontfaceobserver';
 
 import store from './core/redux/store';
 
@@ -10,15 +11,30 @@ import Main from './container/Main';
 
 import './App.scss';
 import MovieCompareMenu from './components/common/MovieCompareMenu';
+import classname from 'classnames';
 
 const history = createBrowserHistory()
 
+
 class App extends Component {
-  render() { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      fontLoad: false
+    }
+  }
+  componentDidMount() {
+    const font = new FontFaceObserver('Nanum Square');
+    font.load(null, 10000).then(() => {
+      this.setState({fontLoad: true});
+      console.log('font load finish')
+    })
+  }
+  render() {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <div className="Root">
+          <div className={classname('Root', {'Root--fontLoading': this.state.fontLoad})}>
             <Navi />
             <Switch>
               <Route path="/" component={Main}/>
