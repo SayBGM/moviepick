@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Logo } from '../../assets';
 import SearchBar from './SearchBar';
 
@@ -10,9 +12,11 @@ class Navi extends Component {
     return (
       <div className="Navi">
         <div className="Navi__wrapper">
-          <div className="Navi__wrapper__img">
-            <Logo width="150px"/>
-          </div>
+          <Link to="/">
+            <div className="Navi__wrapper__img">
+              <Logo width="150px"/>
+            </div>
+          </Link>
           <SearchBar />
         </div>
       </div>
