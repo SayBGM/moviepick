@@ -34,37 +34,12 @@ export const SET_MOVIE_LIST = 'SET_MOVIE_LIST'
 /**
  * 비교 장바구니 담기
  */
-export const SELECT_MOVIE = 'SELECT_MOVIE'
+export const IN_COMPARE_MOVIE = 'IN_COMPARE_MOVIE'
 
 /**
  * 비교 장바구니에서 영화 빼기
  */
-export const DELETE_MOVIE = 'DELETE_MOVIE'
-
-/**
- * 영화 비교 정보 가져오기
- */
-export const GET_COMPARE_MOVIE_LIST = 'GET_COMPARE_MOVIE_LIST'
-
-/**
- * 영화 비교 ajax 통신 시작
- */
-export const LODING_COMPARE_MOVIE_LIST = 'LODING_COMPARE_MOVIE_LIST'
-
-/**
- * 영화 비교 ajax 통신 종료
- */
-export const END_COMPARE_MOVIE_LIST = 'END_COMPARE_MOVIE_LIST'
-
-/**
- * 영화 비교 성공
- */
-export const SUCCESS_COMPARE_MOVIE_LIST = 'SUCCESS_COMPARE_MOVIE_LIST'
-
-/**
- * 영화 비교 실패
- */
-export const FAIL_COMPARE_MOVIE_LIST = 'FAIL_COMPARE_MOVIE_LIST'
+export const OUT_COMPARE_MOVIE = 'OUT_COMPARE_MOVIE'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // 검색
