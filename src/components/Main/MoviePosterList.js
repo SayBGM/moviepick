@@ -20,7 +20,6 @@ class MoviePosterList extends Component {
 
   renderList () {
     const { movieList, loading, status } = this.props;
-    console.log(movieList)
     const defaultOptions = {
       loop: true,
       autoplay: true, 
