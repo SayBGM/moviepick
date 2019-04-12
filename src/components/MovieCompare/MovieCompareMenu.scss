@@ -18,6 +18,9 @@
         box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.5);
         background-color: #ffffff;
         animation: menuAnimation 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &__closeBtn {
             position: absolute;
             right: 20px;
@@ -45,23 +48,6 @@
     cursor: pointer;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
     transition: 0.5s;
-    &--isOpen {
-        z-index: 6;
-        width: 230px;
-        box-shadow: 0 0 0 0 transparent;
-        &::after {
-            margin-left: 20px;
-            content: '영화 비교';
-            color: #FFF;
-            font-size: 25px;
-        }
-    }
-    & svg {
-        position: relative;
-        left: -3px;
-        width: 40px;
-        height: 40px;
-    }
     &:hover {
         z-index: 6;
         width: 230px;
@@ -72,6 +58,34 @@
             font-size: 25px;
             animation: msgAnimation 0.5s;
         }
+    }
+    &--isOpen {
+        z-index: 6;
+        width: 230px;
+        box-shadow: 0 0 0 0 transparent;
+        &::after {
+            margin-left: 20px;
+            content: '영화 비교';
+            color: #FFF;
+            font-size: 25px;
+        }
+        &:hover {
+            z-index: 6;
+            width: 230px;
+            &::after {
+                margin-left: 20px;
+                content: '영화 비교';
+                color: #FFF;
+                font-size: 25px;
+                animation: none;
+            }
+        }
+    }
+    & svg {
+        position: relative;
+        left: -3px;
+        width: 40px;
+        height: 40px;
     }
 }
 

@@ -10,7 +10,7 @@ import Navi from './components/common/Navi';
 import Main from './container/Main';
 
 import './App.scss';
-import MovieCompareMenu from './components/common/MovieCompareMenu';
+import MovieCompareMenu from './components/MovieCompare/MovieCompareMenu';
 import classname from 'classnames';
 
 const history = createBrowserHistory()
@@ -27,7 +27,6 @@ class App extends Component {
     const font = new FontFaceObserver('Nanum Square');
     font.load(null, 10000).then(() => {
       this.setState({fontLoad: true});
-      console.log('font load finish')
     })
   }
   render() {

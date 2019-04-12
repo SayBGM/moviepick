@@ -4,6 +4,7 @@ import classname from 'classnames';
 
 import './MovieCompareMenu.scss';
 import { Compare } from '../../assets';
+import MovieCompareList from './MovieCompareList';
 
 class MovieCompareMenu extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class MovieCompareMenu extends Component {
           onClick={() => this.ClickFloatBtn()}>
           <Compare />
         </div>
+        {isOpen ? 
         <div
           className={
             classname('MovieCompareMenu', {
@@ -40,9 +42,12 @@ class MovieCompareMenu extends Component {
           onClick={() => this.setState({isOpen: false})}
         >
           <div className="MovieCompareMenu__contents" onClick={(e) => e.stopPropagation()}>
-            <div className="MovieCompareMenu__contents__closeBtn" onClick={() => this.setState({isOpen: false})}>ｘ</div>
+            <div className="MovieCompareMenu__contents__closeBtn" onClick={() => this.setState({isOpen: false})}>×</div>
+            <div className="MovieCompareMenu__contents__List">
+              <MovieCompareList />
+            </div>
           </div>
-        </div>
+        </div> : null}
       </React.Fragment>
     );
   }
