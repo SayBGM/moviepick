@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 
-import { Compare } from '../../assets';
+import { Compare, SelectIcon } from '../../assets';
 
 import './MoviePoster.scss';
-import {inCompareMovie} from '../../core/redux/actions/MovieCompareAction';
+import {inCompareMovie, outCompareMovie} from '../../core/redux/actions/MovieCompareAction';
 
 /**
  * 영화 포스터 컴포넌트
@@ -21,7 +21,7 @@ class MoviePoster extends Component {
     };
   }
   render() { 
-    const { type, info, inCompareMovie } = this.props;
+    const { type, info, inCompareMovie, index, outCompareMovie } = this.props;
     const {
       imgSrc,
       ranking,
@@ -32,7 +32,15 @@ class MoviePoster extends Component {
     } = info;
     const { isShow } = this.state;
     return (
-      <div className="Main__MoviePoster">
+      <div className={
+        classNames(
+          'Main__MoviePoster',
+          {
+            'Main__MoviePoster--main': type == 'main',
+            'Main__MoviePoster--select': type == 'select'
+          }
+        )
+      }>
         <div 
           className={
             classNames(
@@ -47,20 +55,30 @@ class MoviePoster extends Component {
           onMouseLeave={() => this.setState({isShow:false})}
         >
           <img src={imgSrc} style={{width:'100%'}}/>
+            <div 
+              className={
+                classNames('MoviePoster__btn MoviePoster__btn--select', {
+                  'MoviePoster__btn--blind': !isShow
+                })
+              }
+              onClick={(e) => console.log(e)}
+            >
+            <SelectIcon width="18px" height="18px"/>
+            </div>
             {
               type === 'main' ? 
               <div 
                 className={
-                  classNames('MoviePoster--compareBtn', {
-                    'MoviePoster--compareBtn--blind': !isShow
+                  classNames('MoviePoster__btn MoviePoster__btn--compare', {
+                    'MoviePoster__btn--blind': !isShow
                   })
                 }
-                onClick={() => inCompareMovie(info)}
+                onClick={() => {inCompareMovie(info);}}
               >
                 <Compare width="18px" height="18px"/>
               </div> :
-              <div className="MoviePoster--delete">
-                𝘅
+              <div className="MoviePoster--delete" onClick={() => outCompareMovie(index)}>
+                ×
               </div>
             }
         </div>
@@ -78,7 +96,12 @@ class MoviePoster extends Component {
               관객수 {audience}명
             </div>
           </div>
-          : null
+          : 
+          <div className="MovieInfo">
+            <div className="MovieInfo__title--select">
+              {name}
+            </div>
+          </div>
         }
       </div>
     );
@@ -86,7 +109,8 @@ class MoviePoster extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  inCompareMovie: (data) => dispatch(inCompareMovie(data))
+  inCompareMovie: (data) => dispatch(inCompareMovie(data)),
+  outCompareMovie: (index) => dispatch(outCompareMovie(index))
 })
  
 export default connect(null, mapDispatchToProps)(MoviePoster);
