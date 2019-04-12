@@ -1,23 +1,25 @@
 import * as types from '../actions/types';
 
 const initialState = {
-  compareList: []
+  compareList: [],
+  compareMsg: null
 }
 
 const MovieCompareReducer = (state = initialState, action) => {
-  const tempList = state.compareList;
   switch (action.type) {
     case types.IN_COMPARE_MOVIE:
-      tempList.push(action.data);
-      return {
-        ...state,
-        compareList: tempList
-      }
+    return state.compareList.length === 6 ? {
+      ...state,
+      compareMsg: '더이상 비교할 수 없습니다.'
+    } : {
+      ...state,
+      compareList: [...state.compareList, action.data]
+    }
     case types.OUT_COMPARE_MOVIE:
-      tempList.pop(action.index);
       return {
         ...state,
-        compareList: tempList 
+        compareList: [...state.compareList.slice(0, action.index), ...state.compareList.slice(action.index+1)],
+        compareMsg: null,
       }
     default:
       return state;
