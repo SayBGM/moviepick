@@ -23,8 +23,7 @@
             bottom: 10px;
             right: 10px;
             & svg {
-                position: relative;
-                top: 1px;
+                transform: translateX(-1px)
             }
         }
         &--select {

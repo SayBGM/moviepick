@@ -9,7 +9,7 @@ import { fakeAjax } from './../constants/fakeAjax'
 export default function MovieInfoEpic (action$, store) {
   return action$.pipe(
     ofType(types.GET_MOVIE_LIST),
-    switchMap(action => from(fakeAjax())
+    switchMap(action => from(fakeAjax(action.dateType))
       .pipe(
         mergeMap(
           data => [Action.setMovieList(data), Action.successGetMovieList()]),

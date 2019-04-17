@@ -1,4 +1,4 @@
-export const fakeAjax = () => {
+export const fakeAjax = (dateType) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       return resolve([

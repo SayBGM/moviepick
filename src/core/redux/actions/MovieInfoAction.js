@@ -3,9 +3,10 @@ import * as types from './types';
 /**
  * 영화 정보 가져오기
  */
-export const getMovieList = () => {
+export const getMovieList = (dateType) => {
   return {
     type: types.GET_MOVIE_LIST,
+    dateType
   };
 }
 
