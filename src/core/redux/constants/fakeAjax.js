@@ -42,6 +42,46 @@ export const fakeAjax = (dateType) => {
           screening: 3223,
           audience: 353274,
         },
+        {
+          imgSrc: require('./../../../assets/testPoster2.jpg'),
+          ranking: 6,
+          name: '어벤져스: 인피니티 워',
+          manyScreen: 697,
+          screening: 3223,
+          audience: 353274,
+        },
+        {
+          imgSrc: require('./../../../assets/testPoster2.jpg'),
+          ranking: 7,
+          name: '어벤져스: 인피니티 워',
+          manyScreen: 697,
+          screening: 3223,
+          audience: 353274,
+        },
+        {
+          imgSrc: require('./../../../assets/testPoster2.jpg'),
+          ranking: 8,
+          name: '어벤져스: 인피니티 워',
+          manyScreen: 697,
+          screening: 3223,
+          audience: 353274,
+        },
+        {
+          imgSrc: require('./../../../assets/testPoster2.jpg'),
+          ranking: 9,
+          name: '어벤져스: 인피니티 워',
+          manyScreen: 697,
+          screening: 3223,
+          audience: 353274,
+        },
+        {
+          imgSrc: require('./../../../assets/testPoster2.jpg'),
+          ranking: 10,
+          name: '어벤져스: 인피니티 워',
+          manyScreen: 697,
+          screening: 3223,
+          audience: 353274,
+        },
       ])
     }, 5000)
   })
