@@ -15,7 +15,14 @@ import './MoviePosterList.scss';
  * MoivePoster를 가로 리스트 형식으로 출력해주는 컴포넌트로써 버튼을 누르면 3개씩 스크롤을 이동시킴
  */
 class MoviePosterList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0
+    }
+  }
   renderList () {
+    const { index } = this.state;
     const { movieList, loading, status } = this.props;
     if (loading) {
       return (
@@ -36,7 +43,7 @@ class MoviePosterList extends Component {
         </MovieLodingFail>
       )
     }
-    return movieList.map((movie) => (
+    return movieList.slice(index, index + 5).map((movie) => (
       <MoviePoster
         type="main"
         info={movie}
@@ -45,22 +52,37 @@ class MoviePosterList extends Component {
     ))
   }
 
+  changeList() {
+    const { index } = this.state;
+    if (index === 0) {
+      this.setState({index: 5})
+    } else {
+      this.setState({index: 0})
+    }
+  }
+
   render() {
-    const { status } = this.props;
+    const { status, loading } = this.props;
     return (
       <React.Fragment>
         <MovieRankingType />
         <div className="MoviePosterList">
           {
-            status === true ? 
-              <div className="MoviePosterList__Arrow MoviePosterList__Arrow--Left">
+            status === true && !loading? 
+              <div
+                className="MoviePosterList__Arrow MoviePosterList__Arrow--Left"
+                onClick={() => this.changeList()}
+              >
                  {'<'}
               </div> : null
           }
             {this.renderList()}
           {
-            status === true ? 
-              <div className="MoviePosterList__Arrow MoviePosterList__Arrow--Right">
+            status === true && !loading ? 
+              <div
+                className="MoviePosterList__Arrow MoviePosterList__Arrow--Right"
+                onClick={() => this.changeList()}
+              >
                 {'>'}
               </div> : null
           }

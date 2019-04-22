@@ -86,7 +86,7 @@ class MoviePoster extends Component {
           type == 'main' ?
           <div className="MovieInfo">
             <div className="MovieInfo__title">
-              <span className="MovieInfo__title__ranking">{ranking}</span>{'  '}
+              <span className="MovieInfo__title__ranking">{ranking}위</span>{'  '}
               <span className="MovieInfo__title__name">{name}</span>
             </div>
             <div className="MovieInfo__screen">
