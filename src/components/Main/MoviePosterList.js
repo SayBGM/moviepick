@@ -46,17 +46,24 @@ class MoviePosterList extends Component {
   }
 
   render() {
+    const { status } = this.props;
     return (
       <React.Fragment>
         <MovieRankingType />
         <div className="MoviePosterList">
-          <div className="MoviePosterList__Arrow--Left">
-            {'<'}
-          </div>
+          {
+            status === true ? 
+              <div className="MoviePosterList__Arrow MoviePosterList__Arrow--Left">
+                 {'<'}
+              </div> : null
+          }
             {this.renderList()}
-          <div className="MoviePosterList__Arrow--Right">
-            {'>'}
-          </div>
+          {
+            status === true ? 
+              <div className="MoviePosterList__Arrow MoviePosterList__Arrow--Right">
+                {'>'}
+              </div> : null
+          }
         </div>
       </React.Fragment>
     );
