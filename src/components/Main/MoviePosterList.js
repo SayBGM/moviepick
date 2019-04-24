@@ -21,6 +21,13 @@ class MoviePosterList extends Component {
       index: 0
     }
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.loading !== this.props.loading) {
+      this.setState({index: 0})
+    }
+  }
+
   renderList () {
     const { index } = this.state;
     const { movieList, loading, status } = this.props;
@@ -70,20 +77,20 @@ class MoviePosterList extends Component {
           {
             status === true && !loading? 
               <div
-                className="MoviePosterList__Arrow MoviePosterList__Arrow--Left"
+                className="MoviePosterList__Arrow "
                 onClick={() => this.changeList()}
               >
-                 {'<'}
+              <div className="MoviePosterList__Arrow--Left"></div>
               </div> : null
           }
             {this.renderList()}
           {
             status === true && !loading ? 
               <div
-                className="MoviePosterList__Arrow MoviePosterList__Arrow--Right"
+                className="MoviePosterList__Arrow"
                 onClick={() => this.changeList()}
               >
-                {'>'}
+                <div className="MoviePosterList__Arrow--Right"></div>
               </div> : null
           }
         </div>
