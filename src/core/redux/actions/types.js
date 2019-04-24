@@ -67,3 +67,35 @@ export const SUCCESS_SEARCH = 'SUCCESS_SEARCH'
  * 검색 실패
  */
 export const FAIL_SEARCH = 'FAIL_SEARCH'
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// 자세한 영화정보 가져오기
+/**
+ * 자세한 영화 정보 가져오기
+ */
+export const GET_MORE_MOVIE_INFO = 'GET_MORE_MOVIE_INFO';
+
+/**
+ * 자세한 영화 정보 ajax 통신 시작
+ */
+export const LODING_GET_MORE_MOVIE_INFO = 'LODING_GET_MORE_MOVIE_INFO'
+
+/**
+ * 자세한 영화 정보 ajax 통신 종료
+ */
+export const END_GET_MORE_MOVIE_INFO = 'END_GET_MORE_MOVIE_INFO'
+
+/**
+ * 자세한 영화 정보 통신 성공
+ */
+export const SUCCESS_GET_MORE_MOVIE_INFO = 'SUCCESS_GET_MORE_MOVIE_INFO'
+
+/**
+ * 자세한 영화 정보 통신 실패
+ */
+export const FAIL_GET_MORE_MOVIE_INFO = 'FAIL_GET_MORE_MOVIE_INFO'
+
+/**
+ * 자세한 영화 정보 세팅
+ */
+export const SET_MORE_MOVIE_INFO = 'SET_MORE_MOVIE_INFO'
