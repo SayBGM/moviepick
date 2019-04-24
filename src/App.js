@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
-import { Router, Route, browserHistory, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import FontFaceObserver from 'fontfaceobserver';
 
 import store from './core/redux/store';
