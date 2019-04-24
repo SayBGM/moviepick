@@ -7,7 +7,6 @@ const initialState = {
 }
 
 const MovieInfoReducer = (state = initialState, action) => {
-  const temp = state;
   switch (action.type) {
     case types.SET_MOVIE_LIST:
       return {
